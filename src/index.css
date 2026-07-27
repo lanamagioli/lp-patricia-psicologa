@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-pink-light: #DFABAF;
+  --color-brand-pink-dark: #B98383;
+  --color-brand-lavender: #CABDCD;
+  --color-brand-brown: #5A3B1E;
+  --color-brand-olive-dark: #313912;
+  --color-brand-olive: #747648;
+  --color-brand-beige: #E5DEC7;
+  --color-brand-offwhite: #F6F3F0;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-brand-offwhite);
+    color: var(--color-brand-olive-dark);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+  .animate-marquee-reverse {
+    animation: marquee-reverse 35s linear infinite;
+  }
+  .animate-marquee:hover, .animate-marquee-reverse:hover {
+    animation-play-state: paused;
+  }
+  .text-stroke-pink {
+    -webkit-text-stroke: 1.5px var(--color-brand-pink-dark);
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
